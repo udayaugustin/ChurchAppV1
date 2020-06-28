@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="HRApp.Views.CandidateReferPage"
+             xmlns:customViews="clr-namespace:HRApp.CustomControls"
+             Style="{StaticResource ContentPageStyle}">
+    <NavigationPage.TitleView>
+        <Label Text="Refer Candidate" Style="{StaticResource NavigationLabel}"/>
+    </NavigationPage.TitleView>
+    <ScrollView>
+        <StackLayout Spacing="5">
+            <StackLayout Orientation="Vertical">
+                <Label Text="Candidate Name" Style="{StaticResource FormLabel}"/>
+                <customViews:CustomEntry x:Name="Name"/>
+
+                <Label Text="Phone" Style="{StaticResource FormLabel}"/>
+                <customViews:CustomEntry Keyboard="Numeric" x:Name="Phone"/>
+
+                <Label Text="Applying For(Role)" Style="{StaticResource FormLabel}"/>
+                <customViews:CustomEntry x:Name="ApplyingRole"/>
+
+                <Label Text="Years Of Exp" Style="{StaticResource FormLabel}"/>
+                <customViews:CustomEntry  Keyboard="Numeric" x:Name="YearsOfExp"/>
+
+                <Label Text="Current Company" Style="{StaticResource FormLabel}"/>
+                <customViews:CustomEntry x:Name="CurrentCompany"/>
+
+                <Label Text="Current Location" Style="{StaticResource FormLabel}"/>
+                <customViews:CustomEntry x:Name="CurrentLocation"/>
+                
+                <Label Text="Open for Relocation" Style="{StaticResource FormLabel}"/>
+                <customViews:CustomEntry x:Name="OpenForRelocation"/>
+
+                <Label Text="Upload Resume" Style="{StaticResource FormLabel}"/>
+                <Button Text="Select Resume" Clicked="ChooseFile" WidthRequest="180" HorizontalOptions="Start" Margin="0,0,0,10"/>
+
+                <Button Text="Submit" Clicked="Save"/>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

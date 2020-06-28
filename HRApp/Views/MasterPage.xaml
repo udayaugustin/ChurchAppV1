@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="HRApp.Views.MasterPage"
+                  xmlns:pages="clr-namespace:HRApp.Views">
+    <MasterDetailPage.ToolbarItems>
+        <ToolbarItem IconImageSource="sync.png" Clicked="Synch" Order="Primary"/>
+    </MasterDetailPage.ToolbarItems>
+    <MasterDetailPage.Master>
+        <ContentPage Title="Panel">
+            <StackLayout>
+                <StackLayout HorizontalOptions="FillAndExpand" Padding="30" BackgroundColor="#359DF0" VerticalOptions="FillAndExpand">
+                    <Image Source="logo.png" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+              </StackLayout>
+              
+              <ListView x:Name="listView" HasUnevenRows="True" ItemTapped="ListView_ItemTapped">
+                  <ListView.ItemTemplate> 
+                      <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Padding="10" Orientation="Horizontal">
+                                  <!--<Image Source="{Binding Image}" WidthRequest="40" VerticalOptions="Center" />-->
+                                  <Label Text="{Binding Title}" Margin="10" FontSize="18"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                  </ListView.ItemTemplate>
+              </ListView>
+        </StackLayout>
+        </ContentPage>
+    </MasterDetailPage.Master>
+    <MasterDetailPage.Detail>
+        <pages:CreateJob/>        
+    </MasterDetailPage.Detail>
+</MasterDetailPage>

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="HRApp.Views.YoutubePage"
+             xmlns:viewModels="clr-namespace:HRApp.ViewModel"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms">
+  <ContentPage.BindingContext>
+    <viewModels:YoutubeViewModel/>
+  </ContentPage.BindingContext>
+
+  <StackLayout Padding="5,10"
+               BackgroundColor="White">
+
+    <Label Text="Youtube"
+           TextColor="Black"
+           FontSize="22"/>
+
+    <ListView ItemsSource="{Binding YoutubeItems}"
+              HasUnevenRows="True"
+              ItemTapped="ListViewOnItemTapped">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+
+            <StackLayout Orientation="Vertical"
+                         Padding="10,10,10,20">                                          
+              <Label Text="{Binding Title}"
+                     TextColor="Black"
+                     FontSize="16"/>
+            
+              <!--<Image Source="{Binding HighThumbnailUrl}"
+                     HeightRequest="200"/>          -->    
+            </StackLayout>
+
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+  </StackLayout>
+
+</ContentPage>

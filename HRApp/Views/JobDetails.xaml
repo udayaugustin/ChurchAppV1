@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HRApp.Views.JobDetails"
+             Style="{StaticResource ContentPageStyle}"
+             NavigationPage.HasNavigationBar="True"
+             NavigationPage.HasBackButton="True"
+             BackgroundColor="WhiteSmoke">
+    <NavigationPage.TitleView>
+        <Label Text="Job Detail" Style="{StaticResource NavigationLabel}"/>
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+        <StackLayout>
+            <Label x:Name="JobTitle" Style="{StaticResource JobTitleLabel}"/>
+            <Label x:Name="OpenPositions" Style="{StaticResource JobDetailLabel}"/>
+            <Label x:Name="RequiredExperience" Style="{StaticResource JobDetailLabel}"/>
+            <Label x:Name="SkillSet" Style="{StaticResource JobDetailLabel}"/>
+            <Label x:Name="ExpectedNoticePeriod" Style="{StaticResource JobDetailLabel}"/>
+            <Label Text="Job Description:" Style="{StaticResource JobDetailLabel}"/>
+            <Label x:Name="JobDescriptionValue" Style="{StaticResource JobDescription}"/>
+            
+            <Button Text="Refer A Candidate" x:Name="ReferCandidateButton" Clicked="Refer"/>
+
+            <!--<Label Text=".NET Developer"
+                   TextColor="Black"
+                   FontSize="Large"
+                   FontAttributes="Bold"
+                   VerticalOptions="Start"
+                   HorizontalOptions="CenterAndExpand"
+                   Margin="15,15,15,15"/>
+            <Frame CornerRadius="20" BackgroundColor="White" Margin="15,15,15,15">
+                <Label Text="&#x2022; Number of Positions - 4
+                                                    &#x2022; Required Experience - 4Yrs
+                                                    &#x2022; SkillSet - C#, Xaml, MVVM, XAMARIN
+                                                    &#x2022; Expected Notice Period - 30 Days
+                                                    &#x2022; Job description -
+                                                             &#x2022; Good Communication and writing skill
+                                                             &#x2022; Jira / Agile development
+                                                             &#x2022; Expert in Git"
+                         TextColor="Black"></Label>
+
+            </Frame>-->
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

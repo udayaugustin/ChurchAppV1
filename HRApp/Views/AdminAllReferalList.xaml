@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="HRApp.Views.AdminAllReferalList"
+             Style="{StaticResource ContentPageStyle}">
+    <NavigationPage.TitleView>
+        <Label Text="Referal List" Style="{StaticResource NavigationLabel}"/>
+    </NavigationPage.TitleView>
+    <StackLayout>
+        <ListView x:Name="listView" HasUnevenRows="True" SeparatorVisibility="None" BackgroundColor="WhiteSmoke">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Frame CornerRadius="20" BackgroundColor="White" Margin="10,10,10,10">
+                            <StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding Name}"
+                                       HorizontalOptions="FillAndExpand"
+                                       TextColor="Black"/>
+                                    <Label VerticalOptions="Center" HorizontalOptions="Center" Text="{Binding Phone}" TextColor="Red" />
+                                </StackLayout>
+
+                                <Label Text="{Binding ApplyingRole}" />
+                                <Button Text="View more details" VerticalOptions="End" HorizontalOptions="FillAndExpand" TextColor="White" BackgroundColor="#50B1FF"></Button>
+                            </StackLayout>
+                        </Frame>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

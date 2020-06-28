@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="HRApp.Views.LoginPage"
+             xmlns:customViews="clr-namespace:HRApp.CustomControls"
+             NavigationPage.HasNavigationBar="False"
+             NavigationPage.HasBackButton="False"
+             BackgroundColor="White">
+    <ScrollView>
+    <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
+        <Label Text="Accion Jobs"
+               FontSize="36"
+               FontAttributes="Bold"
+               HorizontalOptions="CenterAndExpand"
+               VerticalOptions="Start"
+               Margin="0,50,0,50"/>
+
+        <StackLayout VerticalOptions="Center" Opacity="1">
+            <Grid VerticalOptions="Center" HeightRequest="500">
+                <Image Source="bg.png" Aspect="AspectFill" />
+
+                <Frame CornerRadius="50"
+                       HeightRequest="60"
+                       WidthRequest="60"
+                       VerticalOptions="Start"
+                       HorizontalOptions="Center"
+                       Margin="0,20,0,20"
+                       BackgroundColor="WhiteSmoke"
+                       BorderColor="#50B1FF">
+                    <Image Source="user48.png" Aspect="Fill" />
+                </Frame>
+
+                <StackLayout Spacing="0" VerticalOptions="Center">
+                    <StackLayout Padding="15,7,15,15">
+                        <Frame
+                   CornerRadius="30"
+                   IsClippedToBounds="true"
+                            HeightRequest="40">
+                            <StackLayout Orientation="Horizontal">
+                                <Image Source="user24.png"></Image>
+                                <customViews:CustomEntry Placeholder="Username"
+                                                 x:Name="Username"
+                                                 VerticalOptions="EndAndExpand"
+                                                 BackgroundColor="White"
+                                                 TextColor="#50B1FF"
+                                                 PlaceholderColor="#50B1FF"
+                                                 HasTransparentBorder = "True"/>
+                            </StackLayout>
+
+                        </Frame>
+
+                        <Frame
+                   CornerRadius="30"
+                   IsClippedToBounds="true"
+                             HeightRequest="40"
+                            Margin="0,20,0,20">
+                            <StackLayout Orientation="Horizontal">
+                                <Image Source="user24.png"></Image>
+                                <customViews:CustomEntry IsPassword="True"
+                                                 Placeholder="Password"
+                                                 x:Name="Password"
+                                                 BackgroundColor="White"
+                                                 TextColor="#50B1FF"
+                                                 VerticalOptions="EndAndExpand"
+                                                 PlaceholderColor="#50B1FF"
+                                                 HasTransparentBorder="True"/>
+                            </StackLayout>
+                        </Frame>
+                        <StackLayout Orientation="Horizontal">
+                            <CheckBox IsChecked="False" BackgroundColor="Transparent" Color="White" HorizontalOptions="Start" VerticalOptions="Start" />
+                            <Label Text="Remember Me" TextColor="White" HorizontalOptions="StartAndExpand" VerticalOptions="Start" ></Label>
+                            <Label Text="Forgot Password?" TextDecorations="Underline" TextColor="White" HorizontalOptions="EndAndExpand" VerticalOptions="Start" ></Label>
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+            </Grid>
+        </StackLayout>
+        <Button Text="Login"
+                BackgroundColor="#eeeeee"
+                TextColor="#50B1FF"
+                Clicked="GoToCreateJob"
+                HeightRequest="100"
+                Margin="0,-5,0,0"
+                FontSize="Large"
+                CornerRadius="0"/>
+    </StackLayout>
+        </ScrollView>
+</ContentPage>

@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="HRApp.Views.JobListPage"
+             NavigationPage.HasNavigationBar="True"
+             NavigationPage.HasBackButton="True"             
+             BackgroundColor="WhiteSmoke">
+    <NavigationPage.TitleView>
+        <Label Text="Job Openings" Style="{StaticResource NavigationLabel}"/>
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+        <ListView x:Name="jobListView" HasUnevenRows="True" SeparatorVisibility="None" BackgroundColor="WhiteSmoke">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Frame CornerRadius="20" BackgroundColor="White" Margin="10,10,10,10">
+                            <StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding JobTitle}"
+                                       HorizontalOptions="FillAndExpand"
+                                       TextColor="Black"/>
+
+                                    <Label VerticalOptions="Center" HorizontalOptions="Center" Text="{Binding OpenPositions}" TextColor="Red" />
+
+                                </StackLayout>
+
+                                <Label Text="{Binding SkillSet}" />
+
+                                <Button Text="View more details" CommandParameter="{Binding .}" VerticalOptions="End" HorizontalOptions="FillAndExpand" TextColor="White" BackgroundColor="#50B1FF" Clicked="GoToJobDetails"></Button>
+                            </StackLayout>
+
+                        </Frame>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </ContentPage.Content>
+</ContentPage>

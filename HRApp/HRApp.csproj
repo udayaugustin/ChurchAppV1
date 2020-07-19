@@ -26,6 +26,12 @@
         <Compile Update="Views\CreateJob.xaml.cs">
           <DependentUpon>CreateJob.xaml</DependentUpon>
         </Compile>
+        <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Model\YoutubePage.xaml.cs">
+          <SubType>Code</SubType>
+        </Compile>
+        <Compile Update="AppShell.xaml.cs">
+          <DependentUpon>AppShell.xaml</DependentUpon>
+        </Compile>
     </ItemGroup>
 
   <ItemGroup>

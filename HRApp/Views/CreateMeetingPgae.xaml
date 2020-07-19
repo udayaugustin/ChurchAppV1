@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="HRApp.Views.CreateMeetingPgae"
+             xmlns:customViews="clr-namespace:HRApp.CustomControls"
+             Style="{StaticResource ContentPageStyle}">
+    <NavigationPage.TitleView>
+        <Label Text="Create Meeting" Style="{StaticResource NavigationLabel}"/>
+    </NavigationPage.TitleView>
+    <ScrollView>
+        <StackLayout Spacing="5">
+            <StackLayout Orientation="Vertical">
+                <Label Text="Title" Style="{StaticResource FormLabel}"/>
+                <customViews:CustomEntry x:Name="JobTitle" Placeholder=""/>                
+            </StackLayout>
+
+            <Label Text="From" Style="{StaticResource FormLabel}"/>
+            <StackLayout Orientation="Horizontal">                
+                <DatePicker/>
+                <TimePicker/>
+            </StackLayout>
+
+            <Label Text="To" Style="{StaticResource FormLabel}"/>
+            <StackLayout Orientation="Horizontal">                
+                <DatePicker/>
+                <TimePicker/>
+            </StackLayout>            
+
+            <Label Text="Event Info:" Style="{StaticResource FormLabel}"/>
+            <Editor HeightRequest="150" Text="{Binding MeetingItem.EventDetail}" />
+
+            <Button Text="Submit" />
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

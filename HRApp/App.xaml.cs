@@ -10,19 +10,19 @@ namespace HRApp
 
         public App()
         {
-            InitializeComponent();            
+            InitializeComponent();
 
-            MainPage = new NavigationPage(new YoutubePage());
-            /*(MainPage as MasterDetailPage).Detail = new NavigationPage(new CreateJob());*/            
+            MainPage = new AppShell();
+            //MainPage = new NavigationPage(new VideoList());
+            /*(MainPage as MasterDetailPage).Detail = new NavigationPage(new CreateJob());*/
         }
 
         protected override void OnStart()
         {
             // Handle when your app starts
-            connection = DependencyService.Get<ISQLiteDb>().GetConnection();
+            /*connection = DependencyService.Get<ISQLiteDb>().GetConnection();
             connection.CreateTableAsync<CandidateReferral>();
-            connection.CreateTableAsync<Job>();
-
+            connection.CreateTableAsync<Job>();*/
         }
 
         protected override void OnSleep()

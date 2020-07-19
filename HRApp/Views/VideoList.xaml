@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="HRApp.Views.VideoList"
+             Title="Messages">
+    <ContentPage.Content>
+        <ListView x:Name="listview" HasUnevenRows="True" SeparatorVisibility="None" BackgroundColor="WhiteSmoke">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Frame CornerRadius="20" BackgroundColor="White" Margin="10,10,10,10">
+                            <StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding Title}"
+                                       HorizontalOptions="FillAndExpand"
+                                       TextColor="Black"/>
+                                    <Label VerticalOptions="Center" HorizontalOptions="Center" Text="{Binding Location}" TextColor="Red" />
+
+                                </StackLayout>
+
+                                <Image Source="{Binding Image, StringFormat='http://uthayakumarbooks.com/vpmchurch/video/uploads/{0}'}"/>
+
+                                <Label Text="{Binding Description}" HorizontalOptions="FillAndExpand" />                                
+
+                                <Button Text="View more details" Clicked="Button_Clicked" BindingContext="{Binding .}" CommandParameter="{Binding .}" VerticalOptions="End" HorizontalOptions="FillAndExpand" TextColor="White" BackgroundColor="#50B1FF" ></Button>
+                            </StackLayout>
+
+                        </Frame>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>

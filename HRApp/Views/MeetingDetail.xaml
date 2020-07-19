@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="HRApp.Views.MeetingDetail"
+             Title="Detail">
+    <ContentPage.Content>        
+        <StackLayout Margin="10">
+            <Label x:Name="Title" Style="{StaticResource JobTitleLabel}"/>
+            <Label x:Name="Date" Style="{StaticResource JobDetailLabel}"/>
+            <Label x:Name="Time" Style="{StaticResource JobDetailLabel}"/>
+            <Label x:Name="Location" Style="{StaticResource JobDetailLabel}"/>
+            <Label Text="Description:" Style="{StaticResource JobDetailLabel}"/>
+            <Label x:Name="Description" Style="{StaticResource JobDescription}"/>                                   
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
